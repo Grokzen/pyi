@@ -15,18 +15,16 @@ def parse_cli():
     """
 
     __docopt__ = """
-usage: pyi basic <package> ... [-q] [-v ...]
-       pyi description <package> ... [-q] [-v ...]
-       pyi downloads <package> ... [-q] [-v ...]
-       pyi releases <package> ... [-q] [-v ...]
-       pyi release <version> <package> ... [-q] [-v ...]
-       pyi raw <package> ... [-q] [-v ...]
+usage: pyi basic <package> ...
+       pyi description <package> ...
+       pyi downloads <package> ...
+       pyi releases <package> ...
+       pyi release <version> <package> ...
+       pyi raw <package> ...
 
 pyi - cli for pypi json endpoints
 
 optional arguments:
-  -q, --quiet       suppress terminal output
-  -v, --verbose     verbose terminal output (multiple -v increases verbosity)
   --version         display the version number and exit
   -h, --help        show this help message and exit
 """
@@ -35,11 +33,11 @@ optional arguments:
 
     args = docopt(__docopt__, version=pyi.__version__)
 
-    pyi.init_logging(1 if args["--quiet"] else args["--verbose"])
+    pyi.init_logging(2)
     log = logging.getLogger(__name__)
 
-    log.debug("Setting verbose level: {}".format(args["--verbose"]))
-    log.debug("Arguments from CLI: {}".format(args))
+    log.debug("Init cli")
+    log.debug(args)
 
     return args
 
