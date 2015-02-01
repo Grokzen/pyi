@@ -33,6 +33,16 @@ $ python setup.py install
 
 ```
 $ pyi basic requests
+
+$ pyi description requests
+
+$ pyi downloads requests
+
+$ pyi releases requests
+
+$ pyi release 2.5.0 requests
+
+$ pyi raw requests
 ```
 
 
